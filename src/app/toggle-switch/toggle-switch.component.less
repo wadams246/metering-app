@@ -1,0 +1,82 @@
+@import '../../variables.less';
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.25em;
+  height: 1.25em;
+  font-size: 16px;
+  margin: 0;
+
+  input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .slider {
+      background-color: @green;
+    }
+    
+    &:focus + .slider {
+      box-shadow: 0 0 1px #0F1520;
+    }
+
+    &:checked + .slider:before {
+      -webkit-transform: translate(1em, -50%);
+      -ms-transform: translate(1em, -50%);
+      transform: translate(1em, -50%);
+      background: #263842;
+    }
+
+    &:checked + .on {
+      visibility: visible;
+    }
+
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #101722;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 4em;
+  
+    &:before {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+      height: 1.125em;
+      width: 1.125em;
+      left: .063em;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #263842;
+      -webkit-transition: .4s;
+      transition: .4s;
+      z-index: 1;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.375em;
+      line-height: 7px;
+      font-weight: 400;
+
+      &.on {
+        left: 14%;
+        color: #263842;
+      }
+      &.off {
+        right: 10%;
+        color: #263842;
+      }
+    }
+  }
+}

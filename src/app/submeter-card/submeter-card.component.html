@@ -1,0 +1,35 @@
+<div class="submeter-card flex-centered">
+    <div class="title" *ngIf="submeter.enabled">
+        ID:as;dlkfja;slkdjfal;skdjfasl;dfj
+    </div>
+
+    <section class="submeter-card-content" *ngIf="submeter.enabled">
+        <div class="card-section">
+            <span class="name">Submeter 0</span>
+        </div>
+
+        <div class="card-section">
+            <span class="heading">Channel On / Off</span>
+            <div class="channel-toggles">
+                <span class="channel-toggle" *ngFor="let channel of channels; let i = index;" [ngClass]="{ 'on': channel.enabled }" (click)="toggleChannel(i)">{{ i + 1 }}</span>
+            </div>
+        </div>
+
+        <div class="card-section toggle-switch">
+            <span class="heading">Toggle All</span>
+            <app-toggle-switch (onChange)="toggleSubmeter($event)"></app-toggle-switch>
+        </div>
+
+        <div class="card-section">
+            <i class="fa-solid fa-xmark" (click)="disableSubmeter()"></i>
+        </div>
+    </section>
+
+    <section class="submeter-card-content submeter-disabled" *ngIf="!submeter.enabled">
+        <div class="card-section">
+            <span class="name">Submeter 0</span>
+        </div>
+
+        <div class="disabled-dash"></div>
+    </section>
+</div>

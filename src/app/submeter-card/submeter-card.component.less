@@ -1,0 +1,119 @@
+@import '../../variables.less';
+
+:host {
+    display: flex;
+}
+
+.submeter-card {
+    position: relative;
+    padding: 20px 5px;
+    background-color: @cardBgColor;
+    min-height: 82px;
+    box-sizing: border-box;
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.65em;
+        font-weight: 500;
+        color: @cardHeadingColor;
+        background-color: #27343e;
+        padding: 2px 16px;
+        border-radius: 3px;
+    }
+
+    .submeter-card-content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+
+        &.submeter-disabled {
+            flex-flow: column;
+            justify-content: space-between;
+
+            .name {
+                margin: 0 0 auto 0 !important;
+            }
+
+            .disabled-dash {
+                display: flex;
+                align-items: flex-end;
+
+                &::after {
+                    display: flex;
+                    content: '';
+                    height: 2px;
+                    width: 16px;
+                    background-color: @cardHeadingColor;
+                }
+            }
+        }
+
+        .name {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: auto 0
+        }
+
+        .heading {
+            font-weight: 500;
+            color: @cardHeadingColor;
+            margin-bottom: 3px;
+        }
+
+        .card-section {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 5px;
+
+            i {
+                color: @cardHeadingColor;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            .channel-toggle {
+                padding: 1px 3px;
+                border-radius: 3px;
+                font-weight: 700;
+                color: #999;
+                background-color: #263842;
+                line-height: 1rem;
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                
+                &:not(:last-of-type) {
+                    margin-right: 3px;
+                }
+
+                &:hover {
+                    color: white;
+                }
+
+                &.on {
+                    color: white;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;                   
+                        height: 2px;
+                        width: 100%;
+                        background-color: @green;
+                    }
+                }
+            }
+        }
+    }
+}
