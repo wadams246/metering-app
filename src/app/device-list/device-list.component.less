@@ -1,0 +1,67 @@
+@import '../../variables.less';
+
+.device-list {
+    
+    .search {
+        padding: 30px 0;
+        position: relative;
+
+        input {
+            background-color: #232a2e;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 30px 5px 5px;
+            color: @cardHeadingColor;
+            position: relative;
+            width: 220px;
+            
+            &::placeholder {
+                font-size: 10px;
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            transform: translateY(-50%);
+        }
+    }
+
+    .devices {
+        max-width: 600px;
+
+        table {
+            border-collapse: collapse;
+            
+            thead th {
+                color: @cardHeadingColor;
+                padding: 0 8px 8px;
+                
+            }
+    
+            tbody tr {
+                background-color: @cardBgColor;
+    
+                td {
+                    padding: 16px 10px;
+                    text-align: center;
+
+                    i {
+                        font-size: 20px;
+                        color: @cardHeadingColor;
+                        cursor: pointer;
+                        
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

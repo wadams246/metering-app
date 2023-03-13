@@ -1,0 +1,41 @@
+<div class="device-list flex-col-centered">
+
+    <div class="search flex-centered">
+        <input type="text" placeholder="Main Power Meter IP, Device ID, Panel Code" >
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="devices">
+        <table>
+            <thead>
+                <tr>
+                    <th>Main Power Meter Id</th>
+                    <th>Main Device ID</th>
+                    <th>Panel Code</th>
+                    <th>Submeters Online</th>
+                    <th>Toggle All</th>
+                    <th>History</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr>
+                    <td>192.168.120.177</td>
+                    <td>1001a7060</td>
+                    <td>111111111</td>
+                    <td>8</td>
+                    <td>
+                        <app-toggle-switch></app-toggle-switch>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-gear"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

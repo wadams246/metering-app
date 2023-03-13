@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubmeterCardComponent } from './submeter-card/submeter-card.component';
 import { ToggleSwitchComponent } from './toggle-switch/toggle-switch.component';
+import { SubmeterListComponent } from './submeter-list/submeter-list.component';
+import { DeviceListComponent } from './device-list/device-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubmeterCardComponent,
-    ToggleSwitchComponent
+    ToggleSwitchComponent,
+    SubmeterListComponent,
+    DeviceListComponent
   ],
   imports: [
     CommonModule,
