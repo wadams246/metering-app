@@ -1,0 +1,51 @@
+<div class="submeter-form flex-col-centered">
+    <section class="input-fields">
+        <form [formGroup]="submeterForm" (ngSubmit)="enterValue()">
+            <input type="text" formControlName="currentValue">
+            <button type="submit" *ngIf="!valuesEntered" class="primary">Submit</button>
+        </form>
+    </section>
+
+    <section class="current-values">
+        <div class="current-value flex-centered">
+            <label for="mainDeviceId">Main Device ID</label>
+            <div>
+                <input 
+                    type="text" 
+                    id="mainDeviceId"
+                    [value]="device.mainDeviceId"
+                    placeholder="Awaiting Entry"
+                    readonly 
+                >
+            </div>
+        </div>
+        <div class="current-value flex-centered">
+            <label for="panelCode">PanelCode</label>
+            <div>
+                <input 
+                    type="text" 
+                    id="panelCode"
+                    [value]="device.panelCode"
+                    placeholder="Awaiting Entry" 
+                    readonly 
+                >
+                <i class="fa-solid fa-pen-to-square" *ngIf="device.panelCode && !editFieldStatus['panelCode']" (click)="editValue('panelCode')"></i>
+                <i class="fa-solid fa-xmark" *ngIf="editFieldStatus['panelCode']"></i>
+            </div>
+        </div>
+        <div class="current-value flex-centered">
+            <label for="powerMeterIP">Main Power Meter IP</label>
+            <div>
+                <input 
+                    type="text" 
+                    id="powerMeterIP"
+                    [value]="device.value"
+                    placeholder="Awaiting Entry" 
+                    readonly 
+                >
+                <i class="fa-solid fa-pen-to-square" *ngIf="device.value && !editFieldStatus['powerMeterIP']" (click)="editValue('powerMeterIP')"></i>
+                <i class="fa-solid fa-xmark" *ngIf="editFieldStatus['powerMeterIP']"></i>
+            </div>
+        </div>
+    </section>
+</div>

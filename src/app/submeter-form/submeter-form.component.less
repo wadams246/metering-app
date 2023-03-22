@@ -1,0 +1,70 @@
+@import '../../variables.less';
+
+.submeter-form {
+    color: @formLabelColor;
+    font-weight: 700;
+    padding: 40px 0;
+
+    .input-fields {
+        margin-bottom: 20px;
+
+        input {
+            width: 180px;
+            font-size: 16px;
+            margin-right: 10px;
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        button {
+
+        }
+    }
+
+    .current-values {
+        padding: 10px;
+        border-radius: 8px;
+        background-color: @cardBgColor;
+        width: 360px;
+        
+        .current-value {
+            display: flex;
+            justify-content: space-between;
+
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+
+            input {
+                font-size: 16px;
+                width: 150px;
+
+                &:read-only {
+                    text-align: right;
+                    background: none;
+                    border: none;
+                    
+                    &::placeholder {
+                        font-style: italic;
+                    }
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+
+            i {
+                color: @formDisabledTextColor;
+                cursor: pointer;
+                margin-left: 3px;
+
+                &:hover {
+                    color: @cardHeadingColor;
+                }
+            }
+        }
+    }
+}
