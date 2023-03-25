@@ -4,4 +4,8 @@
     <div class="flex-centered submeters">
         <app-submeter-card *ngFor="let meter of submeters" [submeter]="meter"></app-submeter-card>
     </div>
+    <div class="flex-centered submeters">
+        <app-submeter-details-card *ngFor="let meter of submeters" [submeter]="meter"></app-submeter-details-card>
+    </div>
 </div>
+

@@ -1,0 +1,76 @@
+@import '../../variables.less';
+
+:host {
+    display: flex;
+}
+
+.submeter-details-card {
+    position: relative;
+    padding: 20px 5px;
+    background-color: @cardBgColor;
+    min-height: 82px;
+    box-sizing: border-box;
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.65em;
+        font-weight: 500;
+        color: @cardHeadingColor;
+        background-color: #27343e;
+        padding: 2px 16px;
+        border-radius: 3px;
+    }
+
+    .submeter-details-card-content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+
+        .name {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .heading {
+            font-weight: 500;
+            color: @cardHeadingColor;
+            margin-bottom: 3px;
+        }
+
+        .card-section {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 5px;
+            max-width: 200px;
+
+            .section-heading {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                
+                span {
+                    color: @cardHeadingColor;
+                    font-weight: 500;
+                    text-align: center;
+                }
+            }
+
+            .section-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                width: 100%;
+                justify-content: space-around;
+
+                span {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

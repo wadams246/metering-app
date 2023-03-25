@@ -1,0 +1,63 @@
+<div class="submeter-details-card flex-centered">
+    <div class="title" *ngIf="submeter.enabled">
+        {{ 'ID:' + submeter.id }}
+    </div>
+
+    <section class="submeter-details-card-content" *ngIf="submeter.enabled">
+        <div class="card-section">
+            <span class="name">Submeter 0</span>
+
+            <div class="card-section toggle-switch">
+                <span class="heading">Toggle All</span>
+                <app-toggle-switch (onChange)="toggleSubmeter($event)"></app-toggle-switch>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <div class="section-heading flex-centered">
+                <span>Voltage</span>
+                <span>Current</span>
+                <span>Channel On/Off</span>
+            </div>
+
+            <div class="section-row" *ngFor="let detail of submeter.details let i = index">
+                <span>{{ detail.voltage }}</span>
+                <span>{{ detail.current }}</span>
+                <span>
+                    <app-channel 
+                        [channelNumber]="i + 1" 
+                        [vertical]="true" 
+                        [enabled]="submeter.channels[i].enabled"
+                        (onToggleChange)="toggleChannel(i)"
+                    >
+                    </app-channel>
+                </span>
+            </div>
+        </div>
+
+        <!-- <div class="card-section">
+            <span class="heading">Voltage</span>
+            <div>
+                <ul>
+                    <li *ngFor="let voltage of voltages">{{ voltage }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <span class="heading">Current</span>
+            <div>
+                <ul>
+                    <li *ngFor="let current of currents">{{ current }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <div class="heading">Channel On / Off</div>
+            <div>
+                <app-channel [channelNumber]="channel" [vertical]="true"></app-channel>
+            </div>
+        </div> -->
+    </section>
+</div>

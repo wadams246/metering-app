@@ -4,7 +4,7 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { SubmeterListComponent } from './submeter-list/submeter-list.component';
 
 const routes: Routes = [
-  { path: '', component: DeviceListComponent },
+  { path: '', component: SubmeterListComponent },
   { path: 'submeterlist', component: SubmeterListComponent },
   {
     path: '**',

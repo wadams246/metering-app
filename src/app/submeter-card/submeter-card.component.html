@@ -11,7 +11,14 @@
         <div class="card-section">
             <span class="heading">Channel On / Off</span>
             <div class="channel-toggles">
-                <span class="channel-toggle" *ngFor="let channel of channels; let i = index;" [ngClass]="{ 'on': channel.enabled }" (click)="toggleChannel(i)">{{ i + 1 }}</span>
+                <app-channel 
+                    class="channel-toggle" 
+                    *ngFor="let channel of channels; let i = index;"
+                    [channelNumber]="i + 1"
+                    [enabled]="channel.enabled"
+                    (onToggleChange)="toggleChannel(i)"
+                >
+                </app-channel>
             </div>
         </div>
 

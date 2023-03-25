@@ -1,0 +1,55 @@
+@import '../../variables.less';
+
+
+.channel-toggle {
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #999;
+    background-color: #263842;
+    line-height: 1rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    
+    &:not(:last-of-type) {
+        margin-right: 3px;
+    }
+
+    &:hover {
+        color: white;
+    }
+
+    &.on {
+        color: white;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;                   
+            height: 2px;
+            width: 100%;
+            background-color: @green;
+        }
+    }
+
+    &.vertical {
+        flex-flow: column;
+        padding: 0 2px;
+        margin: 0 0 3px 0;
+    
+        &.on {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -10px;
+                left: unset;
+                height: 100%;
+                width: 6px;
+            }
+        }
+    }
+}
+

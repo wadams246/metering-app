@@ -10,6 +10,9 @@ import { ToggleSwitchComponent } from './toggle-switch/toggle-switch.component';
 import { SubmeterListComponent } from './submeter-list/submeter-list.component';
 import { DeviceListComponent } from './device-list/device-list.component';
 import { SubmeterFormComponent } from './submeter-form/submeter-form.component';
+import { SubmeterDetailsCardComponent } from './submeter-details-card/submeter-details-card.component';
+import { ChannelComponent } from './channel/channel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { SubmeterFormComponent } from './submeter-form/submeter-form.component';
     ToggleSwitchComponent,
     SubmeterListComponent,
     DeviceListComponent,
-    SubmeterFormComponent
+    SubmeterFormComponent,
+    SubmeterDetailsCardComponent,
+    ChannelComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
